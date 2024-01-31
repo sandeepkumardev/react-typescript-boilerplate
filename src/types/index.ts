@@ -9,9 +9,7 @@ export type AppState = {
   email: string;
 };
 
-export type AppAction =
-  | { type: 'UPDATE_NAME'; payload: string }
-  | { type: 'UPDATE_EMAIL'; payload: string };
+export type AppAction = { type: 'UPDATE_NAME'; payload: string } | { type: 'UPDATE_EMAIL'; payload: string };
 
 export type Store = {
   state: AppState;
