@@ -3,13 +3,13 @@ import './index.css';
 import App from './App';
 import StoreProvider from './context/store';
 
-// handling no-non-null-assertion error
-// https://typescript-eslint.io/rules/no-non-null-assertion/
-const emptyFragement = document.createDocumentFragment();
-const span = document.createElement('span');
-emptyFragement.appendChild(span);
-
-const root = ReactDOM.createRoot(document.getElementById('root') ?? span);
+/**
+ * Why i wrote it like this?
+ * Sometimes we know the type of a value but TypeSript don't.
+ * But we are sure that page will always have an element with a given ID.
+ */
+const element = document.getElementById('root') as HTMLElement;
+const root = ReactDOM.createRoot(element);
 root.render(
   <StoreProvider>
     <App />
