@@ -2,10 +2,14 @@ import React from 'react';
 import './App.css';
 import { useStore } from './context/store';
 
+const Heading: React.FC = () => {
+  return <h1>Template</h1>;
+};
+
 function App(): React.ReactNode {
   const { state, dispatch } = useStore();
 
-  console.log(state.name);
+  console.log(state.email);
 
   dispatch({ type: 'UPDATE_NAME', payload: 'updated name' });
 
@@ -15,9 +19,5 @@ function App(): React.ReactNode {
     </div>
   );
 }
-
-const Heading: React.FC = () => {
-  return <h1>Template</h1>;
-};
 
 export default App;
